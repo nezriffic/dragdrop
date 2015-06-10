@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset=utf-8>
+  <title>Local upload</title>
+  <link rel="stylesheet" type="text/css" href="css/fileupload.css" />
+</head>
+<body>
+
+  <header>Images upload v1.0 (<a href="test_images" target="_blank">test images</a>)</header>
+
+  <section class="uploader">
+    <div>
+      <label>Upload images using input field:<br />
+      <input id="fileupload" type="file" name="file" multiple />
+      </label>
+    </div>
+    <div>OR</div>
+    <div id="dndspot">Drag &amp; drop any JPG or PNG here.</div>
+  </section>
+
+  <section class="thumbnails">
+    <div id="preview"></div>
+    <a href="#" id="reset" class="hidden">reset</a>
+  </section>
+
+  <script type="text/javascript" src="js/msfileupload.js"></script>
+  <script type="text/javascript">
+  if (MSFU) {
+    var msfu = new MSFU({
+      dnd: document.getElementById('dndspot'),
+      input: document.getElementById('fileupload'),
+      preview: document.getElementById('preview'),
+      reset: document.getElementById('reset')
+    });
+  }
+  </script>
+</body>
+</html>
